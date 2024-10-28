@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    // 目标环境：编译后的JS版本为ESNext 编译器支持最新的JS特性
+    "target": "ESNext",
+    // 模块系统：使用ESNext模块系统 使用最新的ES 模块语法
+    "module": "ESNext",
+    // 模块解析：使用bundler模式解析模块 适用于现代的打包工具 webpack rollup
+    "moduleResolution": "bundler",
+    // 导入优化：允许合成默认导入和ES模块互操作 允许从没有默认导出的模块中默认导入。这使得与一些 CommonJS 模块的兼容性更好
+    "allowSyntheticDefaultImports": true,
+    // 启用对 ES 模块和 CommonJS 模块之间的互操作性支持。这通常会生成额外的代码，以便更好地支持默认导入
+    "esModuleInterop": true,
+    // 指定 JSX 代码的处理方式。preserve 表示保留 JSX 代码以供后续处理（例如，使用 Babel）
+    "jsx": "preserve",
+    // 使用solid-js 作为导入源
+    "jsxImportSource": "solid-js",
+    // 允许编译JS文件
+    "allowJs": true,
+    // 启用严格模式
+    "strict": true,
+    "noEmit": true,
+    // 类型定义：使用vinxi的类型定义
+    // 指定要包含的类型定义文件。这意味着 TypeScript 将会使用 vinxi/types/client 中的类型定义
+    "types": ["vinxi/types/client"],
+    // 独立模块：确保每个文件都是独立的模块
+    "isolatedModules": true,
+    // 别名路径：使用别名路径来引用src目录下的文件
+    // 当使用 ~ 开头的路径时，实际指向 ./src/ 目录。这可以简化模块导入路径，使其更具可读性
+    "paths": {
+      "~/*": ["./src/*"]
+    }
+  }
+}
